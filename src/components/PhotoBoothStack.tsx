@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 const PHOTOS = [
@@ -14,6 +15,7 @@ const PHOTOS = [
 const ROTATIONS = [-2.5, 1.8, -1.2, 2.2];
 
 export function PhotoBoothStack() {
+  const t = useTranslations("interests");
   const [order, setOrder] = useState([0, 1, 2, 3]);
 
   const cycleTopToBack = () => {
@@ -66,7 +68,7 @@ export function PhotoBoothStack() {
             );
         })}
       </div>
-      <p className="text-sm text-slate-500">Click for the next photo in stack.</p>
+      <p className="text-sm text-slate-500">{t("photoBoothHint")}</p>
     </div>
   );
 }

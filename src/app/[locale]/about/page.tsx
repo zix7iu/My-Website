@@ -88,12 +88,79 @@ export default async function AboutPage({ params }: Props) {
           <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             {t("title")}
           </h1>
-          <div className="mt-6">
-            <HighlightedIntro
-              paragraphs={introKeys
-                .map((key) => t(key as (typeof introKeys)[number]))
-                .filter(Boolean)}
-            />
+          <div className="mt-6 space-y-6 text-slate-800">
+            {locale === "zh" ? (
+              <>
+                <p className="text-lg leading-relaxed">{t("intro1")}</p>
+                <section>
+                  <h2
+                    className="mb-3 border-l-4 border-sky-400 pl-3 font-display text-xl font-semibold bg-clip-text text-transparent sm:text-2xl"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(90deg, #7dd3fc, #c4b5fd, #f9a8d4)",
+                    }}
+                  >
+                    {t("section1Title")}
+                  </h2>
+                  <ul className="list-none space-y-2 pl-0">
+                    <li className="text-base leading-relaxed">
+                      {t("section1Item1")}
+                    </li>
+                    <li className="text-base leading-relaxed">
+                      {t("section1Item2")}
+                    </li>
+                    <li className="text-base leading-relaxed">
+                      {t("section1Item3")}
+                    </li>
+                  </ul>
+                  <p className="mt-3 text-base leading-relaxed">
+                    {t("section1Closing")}
+                  </p>
+                </section>
+                <section>
+                  <h2
+                    className="mb-3 border-l-4 border-sky-400 pl-3 font-display text-xl font-semibold bg-clip-text text-transparent sm:text-2xl"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(90deg, #7dd3fc, #c4b5fd, #f9a8d4)",
+                    }}
+                  >
+                    {t("section2Title")}
+                  </h2>
+                  <ul className="list-none space-y-2 pl-0">
+                    <li className="text-base leading-relaxed">
+                      {t("section2Item1")}
+                    </li>
+                    <li className="text-base leading-relaxed">
+                      {t("section2Item2")}
+                    </li>
+                    <li className="text-base leading-relaxed">
+                      {t("section2Item3")}
+                    </li>
+                  </ul>
+                </section>
+                <section>
+                  <h2
+                    className="mb-3 border-l-4 border-sky-400 pl-3 font-display text-xl font-semibold bg-clip-text text-transparent sm:text-2xl"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(90deg, #7dd3fc, #c4b5fd, #f9a8d4)",
+                    }}
+                  >
+                    {t("section3Title")}
+                  </h2>
+                  <p className="text-base leading-relaxed">
+                    {t("section3Content")}
+                  </p>
+                </section>
+              </>
+            ) : (
+              <HighlightedIntro
+                paragraphs={introKeys
+                  .map((key) => t(key as (typeof introKeys)[number]))
+                  .filter(Boolean)}
+              />
+            )}
           </div>
         </div>
       </div>

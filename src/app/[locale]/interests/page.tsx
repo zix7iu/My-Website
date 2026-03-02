@@ -37,7 +37,7 @@ export default async function InterestsPage({ params }: Props) {
               "0 0 20px rgba(125, 211, 252, 0.5), 0 0 40px rgba(249, 168, 212, 0.35)",
           }}
         >
-          Photo Booth
+          {t("photoBooth")}
         </h2>
         <div className="mt-4 flex justify-center">
           <PhotoBoothStack />
