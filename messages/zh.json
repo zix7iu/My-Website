@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "about": "关于",
+    "projects": "项目",
+    "experience": "经历",
+    "interests": "兴趣",
+    "profileAlt": "返回首页"
+  },
+  "about": {
+    "title": "关于",
+    "imageAlt": "个人照片",
+    "intro1": "我是一名数据科学家和商业分析师，热衷于构建数据驱动的产品。我拥有 UCLA 与哥伦比亚大学的背景，专注于机器学习、A/B 测试与全栈开发，以解决复杂的市场问题。",
+    "intro2": "",
+    "intro3": "",
+    "intro4": "",
+    "location": "纽约，纽约州",
+    "email": "lydialiu033@gmail.com",
+    "checkResume": "查看我的简历"
+  },
+  "projects": {
+    "title": "项目",
+    "category1Title": "交互开发与创意应用",
+    "category1Description": "融合前端技术与以用户为中心设计的网页应用与互动体验。",
+    "category2Title": "机器学习与预测建模",
+    "category2Description": "面向优化与风险预测的数据驱动模型与算法。",
+    "project1Title": "Travel Quest Log 旅行日志",
+    "project1Description": "游戏化旅行记忆迷你影片应用。",
+    "project2Title": "实时多人游戏",
+    "project2Description": "基于 Angular 与 Socket 的行为研究多人框架。",
+    "project3Title": "健康数据仪表板",
+    "project3Description": "美国呼吸道疾病（哮喘/慢阻肺）统计的交互式可视化。",
+    "project4Title": "化学中的 Bandit 算法",
+    "project4Description": "针对化学反应的 5 种 bandit 算法（UCB、Thompson Sampling 等）的 Python 实现。",
+    "project5Title": "纽约餐厅违规预测",
+    "project5Description": "使用 SVM、XGBoost、神经网络等 ML 模型预测纽约市健康风险。",
+    "project6Title": "分类模型与选举预测",
+    "project6Description": "运用机器学习对政治与人口数据进行选举结果预测的分类建模。",
+    "ctaClickToTry": "去体验",
+    "ctaReadPaper": "阅读论文",
+    "ctaWatchDemo": "观看演示"
+  },
+  "interests": {
+    "title": "兴趣",
+    "intro": "在数据分析之外，我热爱创意表达与探索。我曾担任网易云音乐的歌单策划与编辑，歌单获得超过 4,000 关注与 28 万收藏，体现了我对听众偏好的理解与打造连贯体验的能力。我常参加演唱会、喜欢发现新艺术家，也热衷于动手创作——拼乐高、设计冰棍棒结构、折纸。经常旅行让我接触不同文化与视角，持续塑造我的思考、创作与解决问题的方式。"
+  },
+  "home": {
+    "greeting": "",
+    "tagline": "",
+    "description": "",
+    "cta": ""
+  },
+  "metadata": {
+    "title": "刘子轩",
+    "description": ""
+  }
+}

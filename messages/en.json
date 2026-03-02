@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "interests": "Interests",
+    "profileAlt": "Go to home"
+  },
+  "about": {
+    "title": "About",
+    "imageAlt": "Profile photo",
+    "intro1": "I'm a Business Analytics graduate student at Columbia Engineering passionate about using data to guide product decisions.",
+    "intro2": "My experience spans large-scale e-commerce platforms where I designed experiments, built forecasting models, and developed dashboards to support pricing strategy, trust systems, and operational efficiency.",
+    "intro3": "I enjoy working at the intersection of analytics and product, partnering with cross-functional teams to evaluate trade-offs, test hypotheses, and translate data into approachable actions.",
+    "intro4": "Beyond analytics, I've developed lightweight web applications using JavaScript and Node.js, which helps me understand how data flows through product systems and how insights translate into implementation. I'm currently seeking a Business Analyst or Product Data Analyst internship where I can contribute rigorous analysis while continuing to grow at the intersection of data, product, and emerging technologies like AI.",
+    "location": "New York, NY",
+    "email": "lydialiu033@gmail.com",
+    "checkResume": "Check My Resume"
+  },
+  "projects": {
+    "title": "Projects",
+    "category1Title": "Interactive Dev & Creative Apps",
+    "category1Description": "Web apps and interactive experiences that blend front-end craft with user-centered design.",
+    "category2Title": "Machine Learning & Predictive Modeling",
+    "category2Description": "Data-driven models and algorithms for optimization and risk prediction.",
+    "project1Title": "Travel Quest Log Web-App",
+    "project1Description": "Travel Quest Log is a lightweight web application that transforms users’ travel memories into a gamified, story-style mini movie. It combines front-end interaction design with dynamic content generation to create an engaging, personalized recap experience. This project demonstrates my ability to build user-facing tools that integrate storytelling with interactive web development.",
+    "project2Title": "Realtime Multi-player Game",
+    "project2Description": "An Angular-based real-time multiplayer game framework where multiple users interact within the same shared environment across repeated trials. The system uses socket-based communication to synchronize user behavior and supports collaborative or experimental gameplay settings. It is designed as a flexible template for behavioral studies and human collaboration experiments.",
+    "project3Title": "Health Data Dashboard",
+    "project3Description": "An interactive dashboard visualizing U.S. respiratory disease statistics, with a focus on asthma and COPD trends. Built to communicate public health insights clearly, the dashboard integrates data cleaning, exploratory analysis, and intuitive visual storytelling. The goal is to translate complex health data into accessible insights for broader awareness and decision-making.",
+    "project4Title": "Bandit Algorithm in Chemistry",
+    "project4Description": "Implemented five multi-armed bandit algorithms (Epsilon-Greedy, UCB1, UCB1-Tuned, Thompson Sampling, BayesUCB) to optimize experimental decision-making in chemical reaction studies. Designed modular Python classes to evaluate regret and learning efficiency across simulated reaction environments. This project applies reinforcement learning to sequential decision optimization under uncertainty.",
+    "project5Title": "New York Restaurant Violation Prediction",
+    "project5Description": "Developed machine learning models (SVM, Neural Networks, XGBoost) to predict health violation risk for new NYC restaurants using historical inspection data. Conducted feature engineering and hyperparameter tuning to improve predictive accuracy and model robustness. The project demonstrates applied predictive modeling for risk assessment and regulatory forecasting.",
+    "project6Title": "Classification Modeling for Election Prediction",
+    "project6Description": "This project applies ensemble machine learning techniques to classify county-level election outcomes using demographic and economic indicators. After preprocessing and 10-fold cross-validation, I compared multiple models and built a stacked ensemble combining XGBoost, Random Forest, and Logistic Regression. The final model improved predictive performance to 92.2% accuracy, highlighting the effectiveness of blending complementary learning algorithms.",
+    "ctaClickToTry": "Click to Try",
+    "ctaReadPaper": "Read Paper",
+    "ctaWatchDemo": "Watch Demo"
+  },
+  "interests": {
+    "title": "Interests",
+    "intro": "Outside of analytics, I enjoy creative expression and exploration. I was a playlist curator and editor on NetEase Music, where my collections grew to over 4,000 followers and 280,000 favorites, reflecting my ability to understand audience preferences and craft cohesive experiences. I frequently attend concerts and love discovering new artists, and I'm also passionate about hands-on creativity: building with Lego, designing popsicle stick structures, and folding origami. Traveling regularly allows me to experience different cultures and perspectives, which continues to shape how I think, create, and solve problems."
+  },
+  "home": {
+    "greeting": "",
+    "tagline": "",
+    "description": "",
+    "cta": ""
+  },
+  "metadata": {
+    "title": "Zixuan Liu",
+    "description": ""
+  }
+}
