@@ -50,6 +50,11 @@
     "ctaReadPaper": "阅读论文",
     "ctaWatchDemo": "观看演示"
   },
+  "experience": {
+    "title": "经历",
+    "legendLeft": "实习与研究",
+    "legendRight": "教育背景"
+  },
   "interests": {
     "title": "兴趣",
     "photoBooth": "照片墙",

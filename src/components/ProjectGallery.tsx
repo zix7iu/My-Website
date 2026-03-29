@@ -2,9 +2,21 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { X } from "lucide-react";
-import { PROJECTS, type ProjectType, type ProjectCategory } from "@/data/projects";
+import {
+  PROJECTS,
+  type ProjectItem,
+  type ProjectType,
+  type ProjectCategory,
+} from "@/data/projects";
+
+function getDisplaySkills(project: ProjectItem, locale: string): string[] {
+  if (locale === "zh" && project.skillsZh?.length) {
+    return project.skillsZh;
+  }
+  return project.skills;
+}
 
 function getCtaKey(type: ProjectType): "ctaClickToTry" | "ctaReadPaper" | "ctaWatchDemo" {
   switch (type) {
@@ -46,6 +58,7 @@ const CATEGORY_CONFIG: Record<
 };
 
 export function ProjectGallery() {
+  const locale = useLocale();
   const t = useTranslations("projects");
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
@@ -93,7 +106,7 @@ export function ProjectGallery() {
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-1.5 border-t border-slate-200/60 bg-white/30 px-3 py-2 backdrop-blur-sm">
-                  {project.skills.map((skill) => (
+                  {getDisplaySkills(project, locale).map((skill) => (
                     <span
                       key={skill}
                       className={`rounded px-2 py-0.5 text-xs font-medium ${config.tagBg}`}
@@ -156,7 +169,7 @@ export function ProjectGallery() {
                 {t(`project${selected.id}Description` as const)}
               </p>
               <div className="mt-3 flex flex-wrap gap-1.5">
-                {selected.skills.map((skill) => (
+                {getDisplaySkills(selected, locale).map((skill) => (
                   <span
                     key={skill}
                     className="rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700 dark:bg-slate-200/80 dark:text-slate-800"

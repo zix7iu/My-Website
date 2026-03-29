@@ -2,30 +2,45 @@
 
 import { useRef, useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { useLocale } from "next-intl";
 import {
   EXPERIENCE_TIMELINE,
+  EXPERIENCE_TIMELINE_ZH,
   EDUCATION_BLOCKS,
-  TIMELINE_YEARS,
+  EDUCATION_BLOCKS_ZH,
+  EXPERIENCE_SPINE_EN,
+  EXPERIENCE_SPINE_ZH,
   type TimelineItem,
   type TimelineRow,
   type EducationBlock,
 } from "@/data/experience";
 
-const SPINE_MIN = 2021;
-const SPINE_MAX = 2025;
-const SPINE_YEAR_COUNT = TIMELINE_YEARS.length;
-
-function getEducationBlockStyle(block: EducationBlock): { top: string; height: string } {
-  const endCapped = Math.min(block.endYear, SPINE_MAX);
-  const startCapped = Math.max(block.startYear, SPINE_MIN);
-  const topPct = ((SPINE_MAX - endCapped) / SPINE_YEAR_COUNT) * 100;
+function getEducationBlockStyle(
+  block: EducationBlock,
+  spineMin: number,
+  spineMax: number,
+  yearCount: number
+): { top: string; height: string } {
+  const endCapped = Math.min(block.endYear, spineMax);
+  const startCapped = Math.max(block.startYear, spineMin);
+  const topPct = ((spineMax - endCapped) / yearCount) * 100;
   const spanYears = endCapped - startCapped + 1;
-  const heightPct = (spanYears / SPINE_YEAR_COUNT) * 100;
+  const heightPct = (spanYears / yearCount) * 100;
   return { top: `${topPct}%`, height: `${heightPct}%` };
 }
 
-function EducationSegment({ block }: { block: EducationBlock }) {
-  const style = getEducationBlockStyle(block);
+function EducationSegment({
+  block,
+  spineMin,
+  spineMax,
+  yearCount,
+}: {
+  block: EducationBlock;
+  spineMin: number;
+  spineMax: number;
+  yearCount: number;
+}) {
+  const style = getEducationBlockStyle(block, spineMin, spineMax, yearCount);
   return (
     <div
       className="absolute left-0 right-0 flex gap-2 items-center rounded-lg border border-pink-200/30 bg-pink-200/5 px-2 py-1.5 transition-all duration-300 hover:bg-pink-200/20 hover:border-pink-200/50"
@@ -200,6 +215,14 @@ function TimelineRowBlock({
 }
 
 export function ExperienceTimeline() {
+  const locale = useLocale();
+  const timeline: TimelineRow[] =
+    locale === "zh" ? EXPERIENCE_TIMELINE_ZH : EXPERIENCE_TIMELINE;
+  const spine =
+    locale === "zh" ? EXPERIENCE_SPINE_ZH : EXPERIENCE_SPINE_EN;
+  const educationBlocks =
+    locale === "zh" ? EDUCATION_BLOCKS_ZH : EDUCATION_BLOCKS;
+
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleIndexes, setVisibleIndexes] = useState<Set<number>>(new Set());
   const [expandedKey, setExpandedKey] = useState<string | null>(null);
@@ -221,7 +244,7 @@ export function ExperienceTimeline() {
     );
     rowEls.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [timeline]);
 
   return (
     <div ref={containerRef} className="relative">
@@ -237,7 +260,7 @@ export function ExperienceTimeline() {
 
       {/* Rows: fixed min-height so education block % aligns with spine years */}
       <div className="space-y-0">
-        {EXPERIENCE_TIMELINE.map((row, index) => (
+        {timeline.map((row, index) => (
           <div
             key={row.year}
             data-timeline-row
@@ -262,8 +285,14 @@ export function ExperienceTimeline() {
         aria-hidden
       >
         <div className="relative h-full w-full max-w-sm pl-3">
-          {EDUCATION_BLOCKS.map((block, i) => (
-            <EducationSegment key={i} block={block} />
+          {educationBlocks.map((block, i) => (
+            <EducationSegment
+              key={i}
+              block={block}
+              spineMin={spine.min}
+              spineMax={spine.max}
+              yearCount={spine.yearCount}
+            />
           ))}
         </div>
       </div>

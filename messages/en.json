@@ -50,6 +50,11 @@
     "ctaReadPaper": "Read Paper",
     "ctaWatchDemo": "Watch Demo"
   },
+  "experience": {
+    "title": "Experience",
+    "legendLeft": "Intern & Research",
+    "legendRight": "Education"
+  },
   "interests": {
     "title": "Interests",
     "photoBooth": "Photo Booth",
